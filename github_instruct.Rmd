@@ -173,6 +173,38 @@ knitr::include_graphics(here::here("img","staging.png"))
 
 ## Create individual Repo
 
+Now that your equipped with forking you can be your own content creator! Also you'll be working on your own stuff and will create your own directories. The flow is very similar to forking, but I want you to point out a few key differences. Note: There are few ways to do this, but I like to start with github and work from there. If you already made a project locally in R and want to upload it to Github there are ways to do that as well.
+
+1. Go to github to create a new repository. On your user profile select the repositories tab. The big green button on the top right will say new. 
+
+2. Give a unique name with no spaces or special characters. Typically a descriptive name separated by - is the most common structure. 
+
+3. Select public for now. If you have sensitive data or don't feel ready to publish your results you can always start in private. **It is very difficult to go from public to private!** 
+
+4. Select add a README and add.gitignore with an R template
+
+    a. README's should always be included. They are formated in Markdown (Like this document!) and provide useful descriptions of what the repo does, how it is organized, and who made it.
+    
+    b. gitignores are special files that tell git and github which files we should ignore when uploading. For R projects, typically we want to avoid the actual rprojects files and any
+    
+    c. Licenses are imporant once you start getting into package development and publishing results. This provides you basic copyright laws to protect your code. For the most part, we'll never use licenes in this class, but maybe later on you'll need to use it and [can read out it here](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
+    
+5. Edit your README to be descriptive
+
+6. Clone the repo by selecting the green code button at the repo home. Copy the link to your clipboard
+
+7. Go to RStudio and open a new project. 
+
+8. Select Version Control and then Git.
+
+9. Copy the url in the first space. Tell R where do you want to store the project locally in the second input line. **Keep the same folder name as the github repo!**
+
+10. Make a new markdown document and plot something really quickly using the base mtcars data. Knit the document
+
+11. **Stage, Commit, and Push ** your changes
+
+12. Verify on github that your new markdown with changes is included
+
 ## Collaboration Demonstration
 
 
