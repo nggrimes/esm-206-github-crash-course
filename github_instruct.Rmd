@@ -1,0 +1,150 @@
+---
+title: "Crash Course Instructions"
+author: 
+  - Nathaniel Grimes ^[Instructor for crash course]
+  - Allison Horst ^[Original creator of content]
+date: "2022-10-18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Why Git?
+
+A few reasons that we'll be most interested in to start:
+
+-	It's a great way to safely store organized versions of a project, with a history of changes, off of your local device
+
+-	It's ideal for data science collaborators (including your future self) who need to share & edit code together
+
+-	Built-in tools for project management (project boards, tags, etc.)
+
+
+## Some notes:
+
+Repositories (repos) on GitHub are the same unit as an RStudio Project (i.e. 1 repo = 1 R proj) - it's a place where you can easily store, access & share materials related to the project you're working on.
+ 
+When we create a repository in GitHub and have it communicating with a Project in RStudio, then we can get (pull) information from GitHub to RStudio, or push information from RStudio to GitHub where it is safely stored and/or our collaborators can access it. It also keeps a complete history of updated versions that can be accessed/reviewed by you and your collaborators at any time, from anywhere, as long as you have the internet and required access.
+ 
+A couple of general tips:
+ 
+-	Pull frequently (if working with anyone else, and when you start working on a project again, even if on the same device)
+
+-	Commit/push in small, meaningful increments and with useful (searchable, descriptive) Commit messages
+
+-	The best way to deal with merge conflicts (more on those later…) is to avoid creating merge conflicts. Communicate with collaborators so you’re not all working on the same piece of code at the same time.
+
+## Set up
+
+### Pre-course set up
+
+Students need to make sure they have signed up for a github account which they can do [here](https://github.com/join). Git needs to be installed onto their computers. For Mac users, it should be built in. Windows users will need to download and install beforehand. All users can download up to date verisons of [Git here](https://git-scm.com/downloads). 
+
+A great reference for this step is [Happy Git with R](https://happygitwithr.com/). Honestly, if you ever have any questions you should check that link out. All the information we need is and use is contained in there!
+
+### Configure Git
+
+First we need Git to know who we are and what Git should call us. Open RStudio, and open the ‘Terminal’ tab (next to the Console tab). 
+
+```{r, fig.align='center'}
+knitr::include_graphics(here::here("img","terminal.png"))
+```
+
+
+
+
+Run the following commands in the Terminal (type in, then press Enter after each line), replacing the username and email (keep the quotation marks for each) with your username and email used for your GitHub account.
+
+``` bash
+git config --global user.name "Jane Doe"
+
+git config --global user.email "janedoe@example.com"
+
+```
+
+Next, in the Terminal run the following, carefully checking that the name and email returned match your GitHub information. If your username and email are returned, great! You’ve configured git successfully. If not, raise your hand and we'll help you. 
+
+``` bash
+git config --list --global
+
+```
+Basically these steps tell Git please associate me with the github account connected to my email. Also when I make edits or touch things, store my changes as made by "username" so others can see who made the edits and when. 
+
+### Store your Github personal access token (PAT)
+
+Once you have git configured successfully in the steps above, install the usethis package in R by running the following in the RStudio Console: `install.packages("usethis")`
+
+A lot of scary looking red text will show up while this is installing - don’t panic. If you get to the end and see something like below (with no error) it’s installed successfully.
+
+```{r, fig.align='center'}
+knitr::include_graphics(here::here("img","scary_dl.png"))
+```
+
+If you can't find the terminal tab, an easy way to get into a shell from RStudio is *Tools > Terminal* or *Tools > Shell*.
+
+Run `usethis::create_github_token()` in the Rstudio Console.
+
+This should automatically take you back to GitHub. Enter your GitHub password when prompted. You’ll be taken to a screen that looks like this, with the right options already auto-selected for you:
+
+```{r, fig.align='center'}
+knitr::include_graphics(here::here("img","pat_top.png"))
+```
+
+Change only the expiration date on the token.  **Never have an unlimited expiration date!** These are secure tokens and how you access all your materials. If somehow acquires your token somehow, they could corrupt your data or delete your work. Allowing them to expire keeps your work safe. It is easy to tell R about new tokens. I personally like the 90 days. At the beginning of every quarter it's habit to just update my tokens.
+
+Ignore the other stuff for now ([you can read about scopes here](https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps)) and hit the green generate token button. 
+
+```{r, fig.align='center'}
+knitr::include_graphics(here::here("img","token.png"))
+```
+
+Copy the generated token to your clipboard
+
+Back in Rstudio, in the Console run the following command `gitcreds::gitcreds_set()`
+
+This will prompt you to paste the token you just copied from GitHub. Paste the PAT, press Enter. You should see something like this show up if all is well so far (you’ll have pasted your PAT where mine says “REDACTED”):
+
+```{r, fig.align='center'}
+knitr::include_graphics(here::here("img","redact.png"))
+```
+
+Next run `usethis::git_sitrep()` in the console. Does it return information about your connected GitHub account that looks something like below? Great! You’ve configured git and successfully stored your PAT.
+
+
+```{r, fig.align='center'}
+knitr::include_graphics(here::here("img","success.png"))
+```
+
+
+
+## Fork in a Repo
+
+Now let's see if Github is connected and everything worked! We're going to "Fork" a repo. All forking means is we take a copy of somebody else's repository. We don't have access to change any files on the original repo, but we can make as many changes to our copy and version as we want. This is powerful tool for scientific communication and reproducibility. I can fork into a repo that an author published, check their data and methods, and verify that it indeed produces the results they articulated in their article. We'll practice by loading in the repo where this crash course is stored.
+
+1. [Follow this link to the esm_206_crash_course repo directory on Github](https://github.com/nggrimes/esm_206_crash_course)
+
+2. 
+## Create individual Repo
+
+## Collaboration Demonstration
+
+
+## Where we will go!
+
+Future skills and abilities you'll unlock with Github as you level up include:
+
+- Using Branches to manage workflow across collaborators (ESM 244)
+
+- Resolve merge conflicts (ESM 244)
+
+- Handle pull requests
+
+- Load previous versions of code or data by searching through commit messages
+
+- Discuss internal and public message boards to improve code
+
+- Build websites to publish and showcase your work with the distill package (ESM 244)
+
+- Host shiny apps to communicate your work dynamically and to broader audiences (ESM 244)
