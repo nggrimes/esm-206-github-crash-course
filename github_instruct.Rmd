@@ -123,9 +123,54 @@ knitr::include_graphics(here::here("img","success.png"))
 
 Now let's see if Github is connected and everything worked! We're going to "Fork" a repo. All forking means is we take a copy of somebody else's repository. We don't have access to change any files on the original repo, but we can make as many changes to our copy and version as we want. This is powerful tool for scientific communication and reproducibility. I can fork into a repo that an author published, check their data and methods, and verify that it indeed produces the results they articulated in their article. We'll practice by loading in the repo where this crash course is stored.
 
-1. [Follow this link to the esm_206_crash_course repo directory on Github](https://github.com/nggrimes/esm_206_crash_course)
+1. [Follow this link to the esm-206-github-crash-course repo directory on Github](https://github.com/nggrimes/esm-206-github-crash-course)
 
-2. 
+2. Click the fork button on the top right. This brings a copy to your github account online
+
+```{r, fig.align='center'}
+knitr::include_graphics(here::here("img","success.png"))
+```
+
+3. Once you fork it, now you have your own copy of that repo. But you still need to get it talking with RStudio so you can actually work with it. After forking, **click on the green ‘Code’ button**, then follow these instructions **carefully**:
+
+    a. When you click ‘Code’, you should see a URL in the drop-down info. That URL is going to be the pathway that github and RStudio use to talk to each other. **Copy that link**.
+  
+    b. Open (or go back to) RStudio. Choose: File > New Project > Version Control > Git, which gets you to a screen like this: ![](img/clone.png)
+  
+    
+    c. Paste the URL (that you copied from github when you pressed ‘Code’) into the **Repository URL:** section, then…
+ 
+    d. If it didn’t already auto-populate, Press **TAB** to populate the **Project directory name:** section with the correct (matching) project named linked to the github repo, then…
+ 
+    e. Choose where you want the version controlled project to live on your computer (probably within your ESM 206 folder somewhere…)
+ 
+    f. Press **Create Project** (optional: select ‘Open in new session’ if you’re already working on stuff that you don’t want to close)
+ 
+    g. What you’ve just created is a git-enabled project that contains all of the files contained in the forked repo, now sitting right in your working directory waiting for you to work with them.
+
+4. Let's make some changes to a document
+
+    a. In RStudio, now click on the file ‘test_github.Rmd’ under the src folder in the “Files” tab to open it
+    
+    b. 
+    
+    c. 
+    
+5. Go to the Git tab in RStudio (next to the Environment tab). Any updated files/projects will show up in the ‘Git’ tab in RStudio (probably just the .Rmd this time).
+
+    a. To **stage** the updated file, select the empty box (under ‘Staged’) next to any file that appears there
+    
+    b. **Commit** the staged files by pressing the “Commit” button, then entering a brief commit message (e.g. “testing connection”), then press ‘Commit.’ No error = working. Close that window. 
+    
+    c. After committing, press the upward green arrow to **Push** changes back to GitHub. No error = working. You may need to enter your github username/password to do this.
+    
+    ```{r, fig.align='center'}
+knitr::include_graphics(here::here("img","staging.png"))
+```
+
+    
+6. Ensure that you successfully pushed back to github: Go to your GitHub account, and refresh the repo. Do you see recent commits show up? Cool! That means they’ve been pushed back successfully. Now, click on the test_github.Rmd file in your GitHub repo to see the code contained – does it contain your updates? GREAT. That’s it! 
+
 ## Create individual Repo
 
 ## Collaboration Demonstration
