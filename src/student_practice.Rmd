@@ -1,0 +1,32 @@
+---
+title: "Test"
+author: "Nathaniel Grimes"
+date: "2022-10-18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+
+```
+
+## Load in data
+
+```{r}
+disease<-read_csv(here::here("data","disease_burden.csv")) %>% 
+  janitor::clean_names() %>% 
+  rename(deaths_per_100k=death_rate_per_100_00)
+```
+
+## Modify
+
+Make a new dataframe subset with infants of both sex from the United States, Japan, Afghanistan, and Somalia.
+
+
+## Plot a pretty figure
+
+Make a line graph for each countrys infant mortality rates for all years in the data set.
+
+

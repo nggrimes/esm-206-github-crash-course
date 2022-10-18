@@ -1,0 +1,53 @@
+---
+title: "Test"
+author: "Nathaniel Grimes"
+date: "2022-10-18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+
+```
+
+## Load in data
+
+```{r}
+disease<-read_csv(here::here("data","disease_burden.csv")) %>% 
+  janitor::clean_names() %>% 
+  rename(deaths_per_100k=death_rate_per_100_00)
+```
+
+## Modify
+
+Make a new dataframe subset with infants of both sex from the United States, Japan, Afghanistan, and Somalia.
+
+```{r}
+db_sub <- db %>%
+  filter(country_name %in% c("United States", "Japan", "Afghanistan", "Somalia")) %>%
+  filter(age_group == "0-6 days", sex == "Both")
+```
+
+
+## Plot a pretty figure
+
+Make a line graph for each countrys infant mortality rates for all years in the data set.
+
+```{r}
+ggplot(data = db_sub) +
+  geom_line(aes(x = year,
+                 y = deaths_per_100k,
+                 color = country_name)) +
+  scale_color_manual(values = c("black", "blue", "magenta", "orange")) +
+  annotate(geom = "text",
+           x = 1985,
+           y = 2.2e5,
+           label = "Afghanistan",
+           size = 2.5) +
+  geom_vline(xintercept = 2000,
+             lty = 2) +
+  theme_minimal()
+```
+
