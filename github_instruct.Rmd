@@ -140,10 +140,10 @@ Now let's see if Github is connected and everything worked! We're going to "Fork
 
 1. [Follow this link to the esm-206-github-crash-course repo directory on Github](https://github.com/nggrimes/esm-206-github-crash-course)
 
-2. Click the fork button on the top right. This brings a copy to your github account online
+2. Click the fork button on the top right. This brings a copy of the entire repo to your github account. After clicking the fork button it will open a new page to create a new fork. Leave everything has a default and click the big, green **create fork** at the bottom of the page.
 
 ```{r, fig.align='center'}
-knitr::include_graphics(here::here("img","success.png"))
+knitr::include_graphics(here::here("img","fork.png"))
 ```
 
 3. Once you fork it, now you have your own copy of that repo. But you still need to get it talking with RStudio so you can actually work with it. After forking, **click on the green ‘Code’ button**, then follow these instructions **carefully**:
@@ -165,11 +165,13 @@ knitr::include_graphics(here::here("img","success.png"))
 
 4. Let's make some changes to a document
 
-    a. In RStudio, now click on the file ‘test_github.Rmd’ under the src folder in the “Files” tab to open it
+    a. In RStudio, now click on the file ‘student_practice.Rmd’ under the src folder in the “Files” tab to open it
     
-    b. 
+    b. Follow the instructions to manipulate the data and plot a graph. Make sure to save when done.
     
-    c. 
+    c. Check your solutions with the student_practice_sol.Rmd
+    
+    d. Now that we have made changes locaclly we have to put it back on to the GitHub cloud
     
 5. Go to the Git tab in RStudio (next to the Environment tab). Any updated files/projects will show up in the ‘Git’ tab in RStudio (probably just the .Rmd this time).
 
@@ -179,7 +181,7 @@ knitr::include_graphics(here::here("img","success.png"))
     
     c. After committing, press the upward green arrow to **Push** changes back to GitHub. No error = working. You may need to enter your github username/password to do this.
     
-    ```{r, fig.align='center'}
+```{r, fig.align='center'}
 knitr::include_graphics(here::here("img","staging.png"))
 ```
 
@@ -204,7 +206,14 @@ Now that your equipped with forking you can be your own content creator! Also yo
     
     c. Licenses are imporant once you start getting into package development and publishing results. This provides you basic copyright laws to protect your code. For the most part, we'll never use licenes in this class, but maybe later on you'll need to use it and [can read out it here](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
     
-5. Edit your README to be descriptive
+    d. At the bottom select create repository. Here is an image with how setting up a new repository should look like. Use whatever name is appropriate for your work.
+    
+```{r, fig.align='center'}
+knitr::include_graphics(here::here("img","new_repo.png"))
+```
+    
+    
+5. Edit your README to be descriptive. Then add a message to the commit changes box and finally select commit changes
 
 6. Clone the repo by selecting the green code button at the repo home. Copy the link to your clipboard
 
@@ -214,7 +223,7 @@ Now that your equipped with forking you can be your own content creator! Also yo
 
 9. Copy the url in the first space. Tell R where do you want to store the project locally in the second input line. **Keep the same folder name as the github repo!**
 
-10. Make a new markdown document and plot something really quickly using the base mtcars data. Knit the document
+10. Make a new markdown document and plot something really quickly using the base palmer penguins data. Knit the document
 
     a. Attach palmerpenguins and tidyverse in a hidden code chunk (include=FALSE)
     
@@ -222,7 +231,7 @@ Now that your equipped with forking you can be your own content creator! Also yo
     
     c. Customize the ggplot into a beautiful image.
 
-11. **Stage, Commit, and Push ** your changes
+11. **Stage, Commit, and Push ** your changes. Same steps from the fork repo tab.
 
 12. Verify on github that your new markdown with changes is included
 
@@ -230,19 +239,16 @@ Now that your equipped with forking you can be your own content creator! Also yo
 
 Renae and I will now walk through a quick demonstration of how collaboration can work with Github. She will be added as collaborator to a document we've been working on. I'll make some edits then have her make edits. This is a very rudimentary introduction to show how useful it could be. To learn more about project management with multiple users take ESM 244 and we talk how to resolve common issues that pop up and the data management practices that limit problems.
 
-If you want to practice with a partner I included a lab from last year that has you partner up with a classmate and work in the same document. Please refer to Lab 7 Part 1_git collab in the src folder and work through it with a partner sometime.
+If you want to practice with a partner I included a lab from last year that has you partner up with a classmate and work in the same document. Please refer to Lab 7 Part 1_git collab in the src folder and work through it with a partner sometime. Complete instructions are included their. In class demonstration with Renae and I shows how useful it is. 
 
-1. Invite Renae to collab
+1. Invite a collaborator through the settings tab in github.
 
-2. Have her clone in
+2. New collaborator clones the repo to their local drive
 
-3. I'll make an edit to the repo and push
+3. Now they can make edits to the main branch and push and pull those changes.
 
-4. Now I need Renae's skills to add a cool graph
+4. As original owner, I need to pull changes by clicking the pull button (down arrow) before I make edits to update all files.
 
-5. She pulls, stages, commits, and pushes
-
-6. I'll show the edits worked on my computer after pulling in
 
 
 ### Where we will go!
@@ -253,7 +259,7 @@ Future skills and abilities you'll unlock with Github as you level up include:
 
 - Resolve merge conflicts (ESM 244)
 
-- Handle pull requests
+- Handle pull requests (ESM 244)
 
 - Load previous versions of code or data by searching through commit messages
 
