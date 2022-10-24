@@ -43,7 +43,7 @@ A couple of general tips:
 
 #### Pre-course set up
 
-Students need to make sure they have signed up for a github account which they can do [here](https://github.com/join). Git needs to be installed onto their computers. For Mac users, it should be built in. Windows users will need to download and install beforehand. All users can download up to date verisons of [Git here](https://git-scm.com/downloads). 
+Students need to make sure they have signed up for a github account which they can do [here](https://github.com/join). Git needs to be installed onto their computers. For Mac users, it should be built in. Windows users will need to download and install beforehand. All users can download up to date verisons of [Git here](https://git-scm.com/downloads). If you download on windows, make sure it's saved to your program files. When asked about “Adjusting your PATH environment”, make sure to select “Git from the command line and also from 3rd-party software”. Otherwise, we believe it is good to accept the defaults.
 
 A great reference for this step is [Happy Git with R](https://happygitwithr.com/). Honestly, if you ever have any questions you should check that link out. All the information we need is and use is contained in there!
 
@@ -55,8 +55,20 @@ First we need Git to know who we are and what Git should call us. Open RStudio, 
 knitr::include_graphics(here::here("img","terminal.png"))
 ```
 
+Let's do a quick check to make sure we have Git install in the terminal. Run this code if you are on Windows. 
+
+``` bash
+where git
+```
+If you get `C:\Program Files\Git\cmd.git.exe` or `C:\Program Files\Git\pin\git.exe` congratulations your Git should be ready to connect to R. If you get errors, stop double check your installation of Git and come to office hours if it persists. 
 
 
+If on a Mac, run this instead in the Terminal
+
+``` bash
+which git
+```
+Any errors stop and come see us in office hours. Otherwise continue to the next steps to introduce yourself to Git and connect it to GitHub.
 
 Run the following commands in the Terminal (type in, then press Enter after each line), replacing the username and email (keep the quotation marks for each) with your username and email used for your GitHub account.
 
