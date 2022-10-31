@@ -49,7 +49,7 @@ A great reference for this step is [Happy Git with R](https://happygitwithr.com/
 
 #### Configure Git
 
-First we need Git to know who we are and what Git should call us. Open RStudio, and open the ‘Terminal’ tab (next to the Console tab). 
+First we need Git to know who we are and what Git should call us. Open RStudio, and open the ‘Terminal’ tab (next to the Console tab). If you can't find the terminal tab, an easy way to get into a shell from RStudio is *Tools > Terminal* or *Tools > Shell*.
 
 ```{r, fig.align='center'}
 knitr::include_graphics(here::here("img","terminal.png"))
@@ -97,7 +97,6 @@ A lot of scary looking red text will show up while this is installing - don’t 
 knitr::include_graphics(here::here("img","scary_dl.png"))
 ```
 
-If you can't find the terminal tab, an easy way to get into a shell from RStudio is *Tools > Terminal* or *Tools > Shell*.
 
 Run `usethis::create_github_token()` in the Rstudio Console.
 
@@ -107,7 +106,7 @@ This should automatically take you back to GitHub. Enter your GitHub password wh
 knitr::include_graphics(here::here("img","pat_top.png"))
 ```
 
-Change only the expiration date on the token.  **Never have an unlimited expiration date!** These are secure tokens and how you access all your materials. If somehow acquires your token somehow, they could corrupt your data or delete your work. Allowing them to expire keeps your work safe. It is easy to tell R about new tokens. I personally like the 90 days. At the beginning of every quarter it's habit to just update my tokens.
+Change only the expiration date on the token.  **Never have an unlimited expiration date!** These are secure tokens and how you access all your materials. If someone acquires your token somehow, they could corrupt your data or delete your work. Allowing them to expire keeps your work safe. It is easy to tell R about new tokens. I personally like the 90 days. At the beginning of every quarter it's habit to just update my tokens.
 
 Ignore the other stuff for now ([you can read about scopes here](https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps)) and hit the green generate token button. 
 
@@ -146,6 +145,10 @@ Now let's see if Github is connected and everything worked! We're going to "Fork
 knitr::include_graphics(here::here("img","fork.png"))
 ```
 
+    a. An intermediate page will open asking if you want to change the repo name. Almost always you want to keep it the same as the original. Scroll to the bottom and click the **Green Button.**
+    
+    b. It will now open a copy of your GitHub page. Check the left corner to see if it says "yourusername"/esm-206-github-crash-course
+
 3. Once you fork it, now you have your own copy of that repo. But you still need to get it talking with RStudio so you can actually work with it. After forking, **click on the green ‘Code’ button**, then follow these instructions **carefully**:
 
     a. When you click ‘Code’, you should see a URL in the drop-down info. That URL is going to be the pathway that github and RStudio use to talk to each other. **Copy that link**.
@@ -171,7 +174,7 @@ knitr::include_graphics(here::here("img","fork.png"))
     
     c. Check your solutions with the student_practice_sol.Rmd
     
-    d. Now that we have made changes locaclly we have to put it back on to the GitHub cloud
+    d. Now that we have made changes locally we have to put it back on to the GitHub cloud
     
 5. Go to the Git tab in RStudio (next to the Environment tab). Any updated files/projects will show up in the ‘Git’ tab in RStudio (probably just the .Rmd this time).
 
@@ -188,7 +191,7 @@ knitr::include_graphics(here::here("img","staging.png"))
     
 6. Ensure that you successfully pushed back to github: Go to your GitHub account, and refresh the repo. Do you see recent commits show up? Cool! That means they’ve been pushed back successfully. Now, click on the test_github.Rmd file in your GitHub repo to see the code contained – does it contain your updates? GREAT. That’s it! 
 
-### Create individual Repo
+### Create Individual Repo
 
 Now that your equipped with forking you can be your own content creator! Also you'll be working on your own stuff and will create your own directories. The flow is very similar to forking, but I want you to point out a few key differences. Note: There are few ways to do this, but I like to start with github and work from there. If you already made a project locally in R and want to upload it to Github there are ways to do that as well.
 
@@ -202,7 +205,7 @@ Now that your equipped with forking you can be your own content creator! Also yo
 
     a. README's should always be included. They are formated in Markdown (Like this document!) and provide useful descriptions of what the repo does, how it is organized, and who made it.
     
-    b. gitignores are special files that tell git and github which files we should ignore when uploading. For R projects, typically we want to avoid the actual rprojects files and any
+    b. gitignores are special files that tell git and github which files we should ignore when uploading. For R projects, typically we want to avoid the actual rprojects files and any extra intermediate files like caches.
     
     c. Licenses are imporant once you start getting into package development and publishing results. This provides you basic copyright laws to protect your code. For the most part, we'll never use licenes in this class, but maybe later on you'll need to use it and [can read out it here](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
     
@@ -239,7 +242,7 @@ knitr::include_graphics(here::here("img","new_repo.png"))
 
 Renae and I will now walk through a quick demonstration of how collaboration can work with Github. She will be added as collaborator to a document we've been working on. I'll make some edits then have her make edits. This is a very rudimentary introduction to show how useful it could be. To learn more about project management with multiple users take ESM 244 and we talk how to resolve common issues that pop up and the data management practices that limit problems.
 
-If you want to practice with a partner I included a lab from last year that has you partner up with a classmate and work in the same document. Please refer to Lab 7 Part 1_git collab in the src folder and work through it with a partner sometime. Complete instructions are included their. In class demonstration with Renae and I shows how useful it is. 
+If you want to practice with a partner I included a lab from last year that has you partner up with a classmate and work in the same document. Please refer to Lab 7 Part 1_git collab in the src folder and work through it with a partner sometime. Complete instructions are included. Renae and I will do an in class demonstration of the power of collaboration of GitHub. The general steps for setting up a collaboration within a repo are as follows: 
 
 1. Invite a collaborator through the settings tab in github.
 
